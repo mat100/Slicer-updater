@@ -1,0 +1,37 @@
+<Updater>:    
+    name: 'TriLAB Slicer updater'
+
+    RelativeLayout:
+        Label:
+            text: 'Select slicer:'
+            text_size: self.size # Left align
+            size_hint: 0.9, 0.05
+            pos_hint: {'top': 0.95, 'x': 0.05}
+        Spinner:
+            text: root.slicer
+            size_hint: .9, None
+            pos_hint: {'top': 0.88, 'x': 0.05}
+            values: 'KISSlicer 1.6.3', 'PrusaSlicer 2.0'
+            height: '48dp'
+            on_text: root.on_slicer_change(self.text)
+
+        Label:
+            text: 'Select printer model:'
+            text_size: self.size # Left align
+            size_hint: 0.9, 0.05
+            pos_hint: {'top': 0.75, 'x': 0.05}
+        Spinner:
+            text: root.printer
+            pos_hint: {'top': 0.68, 'x': 0.05}
+            size_hint: .9, None
+            height: '48dp'
+            values: 'DeltiQ', 'DeltiQ 2'
+            on_text: root.on_printer_change(self.text)
+
+        Button:
+            text: 'Update'
+            pos_hint: {'y': 0.05, 'x': 0.20}
+            size_hint: .6, None
+            height: '48dp'
+            on_release: root.perform_update()
+            
