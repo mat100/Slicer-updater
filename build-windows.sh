@@ -16,4 +16,5 @@
 #--uac-admin    Using this option creates a Manifest which will request elevation upon application restart.
 #--uac-uiaccess    Using this option allows an elevated application to work with Remote Desktop.
 
-PyInstaller windows.spec --onefile --clean
+#--name trilab-slicer-updater
+PyInstaller app.py --windowed --icon=resources/icons/trilab.ico --onefile --clean

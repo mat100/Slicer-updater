@@ -1,0 +1,7 @@
+app.py
+build-ui.sh
+build-windows.sh
+resources/icons/trilab.ico
+resources/resources.qrc
+ui/updater.ui
+updaters/kisslicer_1_6_3.py
