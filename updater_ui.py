@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file 'ui/updater.ui',
 # licensing of 'ui/updater.ui' applies.
 #
-# Created: Thu Jul  4 15:22:39 2019
+# Created: Tue Jul  9 16:46:53 2019
 #      by: pyside2-uic  running on PySide2 5.13.0
 #
 # WARNING! All changes made in this file will be lost!
@@ -13,8 +13,8 @@ from PySide2 import QtCore, QtGui, QtWidgets
 class Ui_Updater(object):
     def setupUi(self, Updater):
         Updater.setObjectName("Updater")
-        Updater.resize(480, 640)
-        Updater.setMinimumSize(QtCore.QSize(480, 640))
+        Updater.resize(240, 320)
+        Updater.setMinimumSize(QtCore.QSize(240, 320))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/icons/trilab.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         Updater.setWindowIcon(icon)
