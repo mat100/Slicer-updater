@@ -27,18 +27,20 @@ class MainWindow(QMainWindow, Ui_Updater):
         if self.selPrinter.currentText() == "TriLAB DeltiQ":
             url = UPDATE_URL_DELTIQ
         else:
-            QMessageBox.critical(None, "Unsupported printer", "{} printer is currently not supported".format(self.selPrinter.currentText()), QMessageBox.Ok, QMessageBox.NoButton)
+            QMessageBox.warning(None, "Unsupported printer", "{} printer is currently not supported".format(self.selPrinter.currentText()))
             return
 
         if self.selSlicer.currentText() == "KISSlicer 1.6.3":
             slicer = KISSlicer163(os.path.dirname(os.path.realpath(__file__)))
         else:
-            QMessageBox.critical(None, "Unsupported slicer", "{} slicer is currently not supported".format(self.selSlicer.currentText()), QMessageBox.Ok, QMessageBox.NoButton)
+            QMessageBox.warning(None, "Unsupported slicer", "{} slicer is currently not supported".format(self.selSlicer.currentText()))
             return
 
         if url and slicer:
             if slicer.perform_update(url):
-                QMessageBox.information(None, "Update successful", "Slicer profiles updated successfully !", QMessageBox.Ok)
+                QMessageBox.information(None, "Update successful", "Slicer profiles updated successfully")
+            else:
+                QMessageBox.critical(None, "Error", "Slicer profiles updated failed")
  
 if __name__ == '__main__':
     app = QApplication(sys.argv)
