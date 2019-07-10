@@ -113,7 +113,7 @@ class KISSlicer163(object):
                 self.copydir(upd_dir_path, dir_path) # Update profile dir
 
                 if os.path.exists(ref_dir_path): # if exists reference
-                    self.recursive_chmod(ref_dir_path, stat.S_IRWXU|stat.S_IRWXG|stat.S_IRWXO) # Set permission for delete
+                    #self.recursive_chmod(ref_dir_path, stat.S_IRWXU) # Set permission for delete
                     shutil.rmtree(ref_dir_path) # remove old reference dir
                 self.copydir(upd_dir_path, ref_dir_path) # copy new reference from update
 
@@ -121,6 +121,6 @@ class KISSlicer163(object):
         shutil.rmtree(self.upd_path)
 
         # Set reference file for readonly
-        self.recursive_chmod(self.ref_path, stat.S_IREAD|stat.S_IRGRP|stat.S_IROTH)
+        #self.recursive_chmod(self.ref_path, stat.S_IREAD)
 
         return True
