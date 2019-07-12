@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file 'ui/updater.ui',
 # licensing of 'ui/updater.ui' applies.
 #
-# Created: Tue Jul  9 16:53:45 2019
+# Created: Fri Jul 12 09:45:12 2019
 #      by: pyside2-uic  running on PySide2 5.13.0
 #
 # WARNING! All changes made in this file will be lost!
@@ -70,6 +70,17 @@ class Ui_Updater(object):
         self.verticalLayout.addWidget(self.btnUpdate)
         self.horizontalLayout.addLayout(self.verticalLayout)
         Updater.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(Updater)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 240, 19))
+        self.menubar.setStyleSheet("color: rgb(255, 255, 255);")
+        self.menubar.setObjectName("menubar")
+        self.menuAbout = QtWidgets.QMenu(self.menubar)
+        self.menuAbout.setObjectName("menuAbout")
+        Updater.setMenuBar(self.menubar)
+        self.actionInfo = QtWidgets.QAction(Updater)
+        self.actionInfo.setObjectName("actionInfo")
+        self.menuAbout.addAction(self.actionInfo)
+        self.menubar.addAction(self.menuAbout.menuAction())
 
         self.retranslateUi(Updater)
         QtCore.QMetaObject.connectSlotsByName(Updater)
@@ -80,5 +91,7 @@ class Ui_Updater(object):
         self.lblSlicer.setText(QtWidgets.QApplication.translate("Updater", "<html><head/><body><p><span style=\" color:#ffffff;\">Select slicer:</span></p></body></html>", None, -1))
         self.lblPrinter.setText(QtWidgets.QApplication.translate("Updater", "<html><head/><body><p><span style=\" font-size:10pt; color:#ffffff;\">Select printer:</span></p></body></html>", None, -1))
         self.btnUpdate.setText(QtWidgets.QApplication.translate("Updater", "Update", None, -1))
+        self.menuAbout.setTitle(QtWidgets.QApplication.translate("Updater", "About", None, -1))
+        self.actionInfo.setText(QtWidgets.QApplication.translate("Updater", "Info", None, -1))
 
 import resources_rc

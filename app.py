@@ -8,6 +8,9 @@ from PySide2.QtWidgets import QApplication, QMainWindow, QMessageBox
 from updater_ui import Ui_Updater
 from updaters.kisslicer163 import KISSlicer163
 
+VERSION = "0.1.0.dev1"
+BUILD_DATE = "2019-07-12"
+
 UPDATE_URL_DELTIQ = "https://github.com/trilab3d/Slicer-profiles/archive/deltiq.zip"
 UPDATE_URL_DELTIQ2 = "https://github.com/trilab3d/Slicer-profiles/archive/deltiq2.zip"
 
@@ -37,6 +40,11 @@ class MainWindow(QMainWindow, Ui_Updater):
 
     def assignWidgets(self):
         self.btnUpdate.clicked.connect(self.performUpdate)
+
+        self.actionInfo.triggered.connect(self.aboutInfo)
+        
+    def aboutInfo(self):
+        QMessageBox.information(None, "Slicer updater", "Slicer updater\nVersion: {}\nBuild date: {}".format(VERSION, BUILD_DATE))
 
     def performUpdate(self):
         url = None
